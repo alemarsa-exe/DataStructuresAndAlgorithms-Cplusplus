@@ -11,14 +11,6 @@ class Nodo{
         int valor;
         Nodo<T> *siguiente = NULL;
 
-        void imprimir(Nodo *nodo){
-            while(nodo!=NULL){
-                cout<<nodo->valor<<" -> ";
-                nodo=nodo->siguiente;
-            }
-            cout<<"NULL"<<endl;
-        }
-
 };
 
 
