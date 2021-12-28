@@ -23,11 +23,21 @@ class ListaLigada{
         Nodo<T> *getHead(int index);
         
         //Funciones de insertar
-        void insertHead(T valor);
-        void insertTail(T valor);
-        void insertar(int index, T valor);
+        void insertarHead(T valor);
+        void insertarTail(T valor);
+        void insertarPorIndex(int index, T valor);
 
+        //Buscar
+        T buscar(T valor);
 
+        //Borrar
+        void borrarHead();
+        void borrarTail();
+        void borrarPorIndex(int index);
+
+        //Funciones adicionales
+        void imprimir();
+        int contar();
 
 };
 
