@@ -73,4 +73,14 @@ template<typename T>
 int ListaLigada<T>::contar(){
     return maxCounter;
 }
+
+template<typename T>
+void ListaLigada<T>::imprimir(){
+    Nodo<T> *nodo;
+    while(nodo!=NULL){
+                cout<<nodo->valor<<" -> ";
+                nodo=nodo->siguiente;
+            }
+            cout<<"NULL"<<endl;
+}
 #endif
