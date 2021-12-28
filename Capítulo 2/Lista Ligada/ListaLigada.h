@@ -20,7 +20,7 @@ class ListaLigada{
         Nodo<T> *tail = NULL;
 
         ListaLigada();
-        Nodo<T> *getHead(int index);
+        Nodo<T> *obtener(int index);
         
         //Funciones de insertar
         void insertarHead(T valor);
@@ -41,6 +41,36 @@ class ListaLigada{
 
 };
 
+//Implementaciones aquí porque en un cp daría error
 
+template<typename T>
+ListaLigada<T>::ListaLigada(){
+    int maxCounter = 0;
+    head = NULL;
+    tail = NULL;
+}
 
+template<typename T>
+Nodo<T>* ListaLigada<T>::obtener(int index){
+    
+    //Checar que el index esté dentro de los límites
+    if(index <0 || index > maxCounter){
+        return NULL;
+    }
+
+    //Empezar desde la cabeza
+    Nodo<T> *nodo = head;
+
+    //Iterar hasta encontrarlo
+    for(int i=0; i<index; i++){
+        nodo = nodo->siguiente;
+    }
+
+    return nodo;
+}
+
+template<typename T>
+int ListaLigada<T>::contar(){
+    return maxCounter;
+}
 #endif
