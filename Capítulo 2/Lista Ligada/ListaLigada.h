@@ -76,7 +76,7 @@ int ListaLigada<T>::contar(){
 
 template<typename T>
 void ListaLigada<T>::imprimir(){
-    Nodo<T> *nodo;
+    Nodo<T> *nodo = head;
     while(nodo!=NULL){
                 cout<<nodo->valor<<" -> ";
                 nodo=nodo->siguiente;
