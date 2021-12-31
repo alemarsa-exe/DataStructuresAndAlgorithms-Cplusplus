@@ -38,7 +38,6 @@ class ListaLigada{
         //Funciones adicionales
         void imprimir();
         int contar();
-
 };
 
 //Implementaciones aquí porque en un cp daría error
@@ -46,7 +45,7 @@ class ListaLigada{
 //Constructor
 template<typename T>
 ListaLigada<T>::ListaLigada(){
-    int maxCounter = 0;
+    maxCounter = 0;
     head = NULL;
     tail = NULL;
 }
@@ -143,7 +142,15 @@ void ListaLigada<T>::insertarPorIndex(int index, T valor){
     Nodo<T> *prevNodo = new Nodo<T>;
     Nodo<T> *sigNodo = new Nodo<T>;
 
-    //
+    //Asignar el nodo anterior
+    prevNodo = head;
+    
+    //Recorrer la lista para llegar al previo
+    for(int i=0; i < index-1; i++){
+        prevNodo = prevNodo->siguiente;
+    }
+
+    
 }
 
 //Contar
