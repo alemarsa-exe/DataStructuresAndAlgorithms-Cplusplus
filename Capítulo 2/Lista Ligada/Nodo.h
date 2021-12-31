@@ -3,7 +3,7 @@
 
 #include<iostream>
 using namespace std;
-template<class T>
+template<typename T>
 
 class Nodo{
 
@@ -11,7 +11,15 @@ class Nodo{
         int valor;
         Nodo<T> *siguiente = NULL;
 
+        Nodo(T valor);
 };
+
+//Esto es importante. Mi código no compilaba por no tener esto de abajo
+template<typename T>
+Nodo<T>::Nodo(T valor){
+    this->valor = valor;
+    this->siguiente = NULL;
+}
 
 
 #endif
