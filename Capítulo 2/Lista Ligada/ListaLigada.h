@@ -50,7 +50,7 @@ ListaLigada<T>::ListaLigada(){
     tail = NULL;
 }
 
-//Obtener          // Complejidad O(1)
+//Obtener               // Complejidad O(1)
 template<typename T>
 Nodo<T>* ListaLigada<T>::obtener(int index){
     
@@ -71,7 +71,7 @@ Nodo<T>* ListaLigada<T>::obtener(int index){
     return nodo;
 }
 
-//insertarHead     // Complejidad O(1)
+//insertarHead          // Complejidad O(1)
 template<typename T>
 void ListaLigada<T>::insertarHead(T valor){
 
@@ -95,7 +95,7 @@ void ListaLigada<T>::insertarHead(T valor){
     maxCounter++;
 }
 
-//insertarTail     // Complejidad O(1)
+//insertarTail          // Complejidad O(1)
 template<typename T>
 void ListaLigada<T>::insertarTail(T valor){
 
@@ -118,7 +118,7 @@ void ListaLigada<T>::insertarTail(T valor){
     maxCounter++;
 }
 
-//insertarPorIndex      //Complejidad O(n)
+//insertarPorIndex      // Complejidad O(n)
 template<typename T>
 void ListaLigada<T>::insertarPorIndex(int index, T valor){
     
@@ -160,6 +160,8 @@ void ListaLigada<T>::insertarPorIndex(int index, T valor){
     maxCounter++;
 
 }
+
+
 
 //Contar
 template<typename T>
