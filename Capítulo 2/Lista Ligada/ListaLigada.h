@@ -118,7 +118,7 @@ void ListaLigada<T>::insertarTail(T valor){
     maxCounter++;
 }
 
-//insertarPorIndex
+//insertarPorIndex      //Complejidad O(n)
 template<typename T>
 void ListaLigada<T>::insertarPorIndex(int index, T valor){
     
@@ -135,22 +135,30 @@ void ListaLigada<T>::insertarPorIndex(int index, T valor){
     //Por si tratas de agregar al final
     if(index == maxCounter){
         insertarTail(valor);
+        return;
     }
 
-    //Crear nuevos nodos
-    Nodo<T> *nodo = new Nodo<T>(valor);
-    Nodo<T> *prevNodo = new Nodo<T>;
-    Nodo<T> *sigNodo = new Nodo<T>;
-
     //Asignar el nodo anterior
-    prevNodo = head;
-    
+    Nodo<T> *prevNodo = head;
+
     //Recorrer la lista para llegar al previo
     for(int i=0; i < index-1; i++){
         prevNodo = prevNodo->siguiente;
     }
 
-    
+    //Crear y asignar el nodo siguiente
+    Nodo<T> *sigNodo = prevNodo->siguiente;
+
+    //Crear nuevo nodo
+    Nodo<T> *nodo = new Nodo<T>(valor);
+
+    //Asignar el nodo a agregar
+    nodo->siguiente = sigNodo;
+    prevNodo->siguiente = nodo;
+
+    //Actualizar valor máximo
+    maxCounter++;
+
 }
 
 //Contar
@@ -167,6 +175,6 @@ void ListaLigada<T>::imprimir(){
                 cout<<nodo->valor<<" -> ";
                 nodo=nodo->siguiente;
             }
-            cout<<"NULL"<<endl;
+            cout<<"Vacío"<<endl;
 }
 #endif
