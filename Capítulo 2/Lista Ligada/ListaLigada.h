@@ -28,7 +28,7 @@ class ListaLigada{
         void insertarPorIndex(int index, T valor);
 
         //Buscar
-        T buscar(T valor);
+        int buscar(T valor);
 
         //Borrar
         void borrarHead();
@@ -161,7 +161,33 @@ void ListaLigada<T>::insertarPorIndex(int index, T valor){
 
 }
 
+//Buscar                // Complejidad O()
+template<typename T>
+int ListaLigada<T>::buscar(T valor){
 
+    //Checar que no esté vacía la lista
+    if(maxCounter == 0){
+        cout << "La lista está vacía" << endl;
+        return -1;
+    }
+
+    Nodo<T> *nodo = head;
+
+    int index = 0;
+    while(nodo->valor != valor){
+        index++;
+        nodo = nodo->siguiente;
+
+        if(nodo == NULL){
+            cout << "El nodo con el valor " << valor << " no se ha encontrado."<<endl;
+            return -1;
+        }
+    }
+
+    cout << "Se encontró el nodo con el valor " << valor <<  " en la posición " << index << "."<<endl;
+    return index;
+
+}
 
 //Contar
 template<typename T>
