@@ -7,7 +7,7 @@ using namespace std;
 
 int main(){
 
-    /*
+    
     ListaLigada<int> l1; 
     l1.imprimir();
     l1.buscar(0);
@@ -21,10 +21,11 @@ int main(){
     l1.imprimir();
     l1.borrarHead();
     l1.imprimir();
-    */
+    
 
     //Ya funcionan los string :D
     
+    cout << "\nAhora con strings" << endl;
     ListaLigada<string> l2;
     l2.insertarHead("hola");
     l2.insertarTail("estás?");
