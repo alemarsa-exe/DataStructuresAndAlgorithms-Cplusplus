@@ -7,6 +7,7 @@ using namespace std;
 
 int main(){
 
+    /*
     ListaLigada<int> l1; 
     l1.imprimir();
     l1.buscar(0);
@@ -20,8 +21,16 @@ int main(){
     l1.imprimir();
     l1.borrarHead();
     l1.imprimir();
+    */
 
-    //No funcionan los string
+    //Ya funcionan los string :D
     
+    ListaLigada<string> l2;
+    l2.insertarHead("hola");
+    l2.insertarTail("estás?");
+    l2.insertarPorIndex(1, "¿cómo ");
+    l2.buscar("hola");
+    l2.imprimir();
+
     return 0;
 }

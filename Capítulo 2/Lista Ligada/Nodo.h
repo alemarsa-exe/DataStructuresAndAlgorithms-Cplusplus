@@ -8,7 +8,7 @@ template<typename T>
 class Nodo{
 
     public:
-        int valor;
+        T valor;
         Nodo<T> *siguiente = NULL;
 
         Nodo();
