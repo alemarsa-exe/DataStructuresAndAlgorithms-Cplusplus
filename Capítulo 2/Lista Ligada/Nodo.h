@@ -11,6 +11,7 @@ class Nodo{
         int valor;
         Nodo<T> *siguiente = NULL;
 
+        Nodo();
         Nodo(T valor);
 };
 
