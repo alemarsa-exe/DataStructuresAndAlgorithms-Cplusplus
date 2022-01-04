@@ -161,7 +161,7 @@ void ListaLigada<T>::insertarPorIndex(int index, T valor){
 
 }
 
-//Buscar                // Complejidad O()
+//Buscar                // Complejidad O(n)
 template<typename T>
 int ListaLigada<T>::buscar(T valor){
 
@@ -187,6 +187,24 @@ int ListaLigada<T>::buscar(T valor){
     cout << "Se encontró el nodo con el valor " << valor <<  " en la posición " << index << "."<<endl;
     return index;
 
+}
+
+//Borrar Head           // Complejidad O(1)
+template<typename T>
+void ListaLigada<T>::borrarHead(){
+
+    //No hacer nada si la lista está vacía
+    if(maxCounter == 0){
+        return;
+    }
+
+    //Crear nuevo nodo y asignarle el siguiente de head
+    Nodo<T> *sigNodo = head;
+    head = head->siguiente;
+    
+
+    delete sigNodo;
+    maxCounter--;
 }
 
 //Contar

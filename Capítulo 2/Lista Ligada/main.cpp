@@ -18,6 +18,8 @@ int main(){
     l1.buscar(22);
     l1.buscar(0);
     l1.imprimir();
+    l1.borrarHead();
+    l1.imprimir();
 
     //No funcionan los string
     
