@@ -7,7 +7,7 @@ using namespace std;
 
 int main(){
 
-    
+    cout << "Con enteros" << endl;
     ListaLigada<int> l1; 
     l1.imprimir();
     l1.buscar(0);
@@ -20,6 +20,7 @@ int main(){
     l1.buscar(0);
     l1.imprimir();
     l1.borrarHead();
+    l1.borrarTail();
     l1.imprimir();
     
 

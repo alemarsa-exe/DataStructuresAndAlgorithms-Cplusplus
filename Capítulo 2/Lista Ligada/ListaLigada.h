@@ -207,6 +207,38 @@ void ListaLigada<T>::borrarHead(){
     maxCounter--;
 }
 
+//Borrar Tail
+template<typename T>
+void ListaLigada<T>::borrarTail(){
+    
+    //Checar que la lista no esté vacía
+    if(maxCounter == 0){
+        cout << "La lista está vacía" << endl;
+        return;
+    }
+
+    //Si solo hay un elemento, borrar Head
+    if(maxCounter == 1){
+        borrarHead();
+    }
+
+    //Crear dos nuevos nodos
+    Nodo<T> *primerNodo = head;
+    Nodo<T> *segundoNodo = head;
+
+    for(int i=0; i<maxCounter-1; i++){
+        primerNodo = primerNodo->siguiente;
+    }
+
+    for(int i=0; i<maxCounter-2;i++){
+        segundoNodo = segundoNodo->siguiente;
+    }
+    segundoNodo->siguiente = NULL;
+    tail = segundoNodo;
+    delete primerNodo;
+    maxCounter--;
+}
+
 //Contar
 template<typename T>
 int ListaLigada<T>::contar(){
