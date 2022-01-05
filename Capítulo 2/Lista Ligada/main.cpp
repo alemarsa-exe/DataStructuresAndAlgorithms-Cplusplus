@@ -21,6 +21,7 @@ int main(){
     l1.imprimir();
     l1.borrarHead();
     l1.borrarTail();
+    l1.insertarTail(90);
     l1.imprimir();
     
 

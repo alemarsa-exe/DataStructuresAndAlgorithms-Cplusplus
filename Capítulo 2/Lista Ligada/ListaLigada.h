@@ -222,20 +222,19 @@ void ListaLigada<T>::borrarTail(){
         borrarHead();
     }
 
-    //Crear dos nuevos nodos
-    Nodo<T> *primerNodo = head;
+    //Crear un nuevo nodo temporal
     Nodo<T> *segundoNodo = head;
 
-    for(int i=0; i<maxCounter-1; i++){
-        primerNodo = primerNodo->siguiente;
-    }
-
+    //Llevarlo al nodo que se convertirá en tail
     for(int i=0; i<maxCounter-2;i++){
         segundoNodo = segundoNodo->siguiente;
     }
+
+    //Asignarle null al siguiente
     segundoNodo->siguiente = NULL;
+
     tail = segundoNodo;
-    delete primerNodo;
+    
     maxCounter--;
 }
 
