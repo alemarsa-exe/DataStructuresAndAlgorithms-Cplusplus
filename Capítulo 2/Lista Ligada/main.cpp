@@ -22,6 +22,7 @@ int main(){
     l1.borrarHead();
     l1.borrarTail();
     l1.insertarTail(90);
+    //l1.borrarPorIndex(2);
     l1.imprimir();
     
 
@@ -29,7 +30,7 @@ int main(){
     
     cout << "\nAhora con strings" << endl;
     ListaLigada<string> l2;
-    l2.insertarHead("hola");
+    l2.insertarHead("Hola");
     l2.insertarTail("estás?");
     l2.insertarPorIndex(1, "¿cómo ");
     l2.buscar("hola");
