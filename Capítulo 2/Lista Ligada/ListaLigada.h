@@ -207,7 +207,7 @@ void ListaLigada<T>::borrarHead(){
     maxCounter--;
 }
 
-//Borrar Tail
+//Borrar Tail           // Complejidad O(n)
 template<typename T>
 void ListaLigada<T>::borrarTail(){
     
@@ -238,7 +238,7 @@ void ListaLigada<T>::borrarTail(){
     maxCounter--;
 }
 
-//Borrar por Index
+//Borrar por Index      // Complejidad O(n)
 template<typename T>
 void ListaLigada<T>::borrarPorIndex(int index){
     
