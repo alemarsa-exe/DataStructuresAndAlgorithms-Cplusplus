@@ -41,7 +41,7 @@ int main(){
 
     //Probando con strings
     
-    cout << "Ahora con strings" << endl;
+    cout << "\nAhora con strings" << endl;
     
     ListaLigada<string> l2;
 
