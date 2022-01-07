@@ -243,7 +243,7 @@ template<typename T>
 void ListaLigada<T>::borrarPorIndex(int index){
     
     //Checar que index esté dentro del rango
-    if(index < 0 || index > maxCounter){
+    if(index < 0 || index >= maxCounter){
         cout << "Index fuera de límite" << endl;
         return;
     }
@@ -266,7 +266,7 @@ void ListaLigada<T>::borrarPorIndex(int index){
         return;
     }
     
-    //Crear nodos auxiliares
+    //Crear nodos auxiliares y recorrerlos
     Nodo<T> *nodoABorrar = head;
     for(int i=0; i<index-1;i++){
         nodoABorrar = nodoABorrar->siguiente;
@@ -277,6 +277,7 @@ void ListaLigada<T>::borrarPorIndex(int index){
 
     nodoABorrar->siguiente = sigNodo;
 
+    //Borrar y disminuir counter
     delete nodo;
     maxCounter--;
 
