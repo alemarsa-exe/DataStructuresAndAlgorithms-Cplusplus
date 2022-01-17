@@ -273,20 +273,24 @@ void ListaDobleLigada<T>::borrarPorIndex(int index){
         return;
     }
     
-    //Crear nodos auxiliares y recorrerlos
-    DobleNodo<T> *nodoABorrar = head;
+    //Crear un nodo previo y recorrer desde head
+    DobleNodo<T> *prevNodo = head;
     for(int i=0; i<index-1;i++){
-        nodoABorrar = nodoABorrar->siguiente;
+        prevNodo = prevNodo->siguiente;
     }
 
-    DobleNodo<T> *nodo = nodoABorrar->siguiente;
-    DobleNodo<T> *sigNodo = nodo->siguiente;
+    //Este nodo es el que se va a borrar
+    DobleNodo<T> *nodoBorrar = prevNodo->siguiente;
+    
+    //Este es el que sigue después del que se elimina
+    DobleNodo<T> *sigNodo = nodoBorrar->siguiente;
 
-    nodoABorrar->siguiente = sigNodo;
-    sigNodo->previo = nodoABorrar;
+    //Hacer la coneción entre el anterior y el siguiente
+    prevNodo->siguiente = sigNodo;
+    sigNodo->previo = prevNodo;
 
     //Borrar y disminuir counter
-    delete nodo;
+    delete nodoBorrar;
     maxCounter--;
 
 }
