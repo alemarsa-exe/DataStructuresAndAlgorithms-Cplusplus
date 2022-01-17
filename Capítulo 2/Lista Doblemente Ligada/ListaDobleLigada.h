@@ -111,6 +111,11 @@ void ListaDobleLigada<T>::insertarHead(T valor){
     //nuestro nodo va a apuntar a head.
     nodo->siguiente = head;
 
+    //Si head actual tiene un valor, su previo debe apuntar a nodo
+    if(head != NULL){
+        head->previo = nodo;
+    }
+
     //El nuevo nodo se convertirá en head
     head = nodo;
 
@@ -285,7 +290,7 @@ void ListaDobleLigada<T>::borrarPorIndex(int index){
     //Este es el que sigue después del que se elimina
     DobleNodo<T> *sigNodo = nodoBorrar->siguiente;
 
-    //Hacer la coneción entre el anterior y el siguiente
+    //Hacer la conexión entre el anterior y el siguiente
     prevNodo->siguiente = sigNodo;
     sigNodo->previo = prevNodo;
 
